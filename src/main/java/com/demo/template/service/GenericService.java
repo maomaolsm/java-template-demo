@@ -3,16 +3,18 @@ package com.demo.template.service;
 import com.demo.template.controller.domain.BaseCommonDTO;
 import com.demo.template.persistence.GenericRepository;
 import com.demo.template.persistence.domain.BaseCommonDAO;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Created by brook.xi on 12/16/2015.
+ * Created by maomao on 12/16/2015.
  */
 public abstract class GenericService<DAO extends BaseCommonDAO, DTO extends BaseCommonDTO, U extends GenericRepository<DAO>> {
     @Autowired
     protected U genericRepository;
 
-//    MapperFacade mapper;
+    MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 
     private Class<DTO> dtoClass;
     private Class<DAO> daoClass;
@@ -22,8 +24,7 @@ public abstract class GenericService<DAO extends BaseCommonDAO, DTO extends Base
         this.daoClass = daoClass;
     }
 
-    public DAO findOne(Long id) {
-
-        return genericRepository.findOne(id);
+    public DTO findOne(Long id) {
+        return mapperFactory.getMapperFacade().map(genericRepository.findOne(id),dtoClass);
     }
 }
