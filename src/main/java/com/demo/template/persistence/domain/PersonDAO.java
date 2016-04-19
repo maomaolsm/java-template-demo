@@ -11,5 +11,5 @@ import javax.persistence.Entity;
 @Data
 @Entity(name = "person")
 @EqualsAndHashCode(callSuper = true)
-public class PersonDAO extends BaseCommonDAO{
+public class PersonDAO extends BaseCommonDAO {
 }

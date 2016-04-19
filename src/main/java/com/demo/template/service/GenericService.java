@@ -25,6 +25,8 @@ public abstract class GenericService<DAO extends BaseCommonDAO, DTO extends Base
     }
 
     public DTO findOne(Long id) {
-        return mapperFactory.getMapperFacade().map(genericRepository.findOne(id),dtoClass);
+        DAO dao = genericRepository.findOne(id);
+        DTO dto = mapperFactory.getMapperFacade().map(dao, dtoClass);
+        return dto;
     }
 }

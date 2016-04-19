@@ -15,7 +15,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @EqualsAndHashCode(callSuper = true)
-public abstract class BaseCommonDAO extends BaseDao{
+public abstract class BaseCommonDAO extends BaseDao {
 
     @Column
     private String name;

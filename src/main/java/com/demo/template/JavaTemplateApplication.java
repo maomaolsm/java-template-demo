@@ -11,13 +11,13 @@ import java.sql.SQLException;
 @SpringBootApplication
 public class JavaTemplateApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JavaTemplateApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(JavaTemplateApplication.class, args);
+    }
 
-	@Bean(name = "org.h2.tools.Server", initMethod = "start", destroyMethod = "stop")
-	@Profile("default")
-	public Server h2TcpServer() throws SQLException {
-		return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9999");
-	}
+    @Bean(name = "org.h2.tools.Server", initMethod = "start", destroyMethod = "stop")
+    @Profile("default")
+    public Server h2TcpServer() throws SQLException {
+        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9999");
+    }
 }

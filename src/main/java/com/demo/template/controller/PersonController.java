@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/person")
-public class PersonController extends GenericController<PersonDTO,PersonService>{
+public class PersonController extends GenericController<PersonDTO, PersonService> {
 }
