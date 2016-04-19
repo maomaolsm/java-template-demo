@@ -3,7 +3,7 @@
 ## java template demo
 
 ### How to set up the development environment?
-* To develop this project in IntelliJ IDEA, just run ./gradlew cleanIdea idea at the root directory, which will generate the IDEA project file. Open it with IDEA, and there you go.
+* To develop this project in IntelliJ IDEA, just run `./gradlew cleanIdea idea` at the root directory, which will generate the IDEA project file. Open it with IDEA, and there you go.
 
 ### 本例子主要演示的有:
 * 利用java模版,解决类似的基础数据模块的重复代码
